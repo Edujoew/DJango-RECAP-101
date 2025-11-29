@@ -1,0 +1,17 @@
+{% extends 'main.html' %} {% block content %}
+
+<div class="container">
+  <h1 class="display-6 fw-bold my-2">{{animals.name}}</h1>
+  <hr />
+  <img src="{{animals.picture}}" alt="{{animals.name}}" width="300" />
+  <div>{{animals.description}}</div>
+  <hr />
+  <p>Habitat: {{animals.reserve}} || Population: {{animals.number}}</p>
+
+  <a
+    href="{% url 'readAnimals' %}"
+    class="text-decoration-none bg-success text-light py-2 px-2 rounded-3"
+    >Go Back?</a>
+  </div>
+  {% endblock%}
+

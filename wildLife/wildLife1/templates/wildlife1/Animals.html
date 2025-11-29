@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+<h1 class="display-6 fw-bold my-2 text-success" >  WELCOME TO OUR WILDLIFE PAGE!</h1>
+<hr>
+
+{% for animals  in animalss  %}
+
+<h1 class=" display-5">{{animals.name}}</h1>
+<img src="{{animals.picture}}" alt="{{animals.name}}" width="300">
+<div class="lead fs-6 py-2"> {{animals.description}}</div>
+
+<p> Habitat: {{animals.reserve}} || Population: {{animals.number}}</p>
+<div class="py-2">
+    <a href="{% url 'readOneAnimal' animals.id %}"
+    class="text-decoration-none bg-success text-light py-2 px-2 rounded-3 fs-6">See More</a>
+<a href="{% url 'updateAnimal' animals.id %}"
+class="text-decoration-none bg-info text-light py-2 px-2 rounded-3 fs-6">Update</a>
+<a href="{% url 'deleteAnimal' animals.id %}"
+class="text-decoration-none bg-danger text-light py-2 px-2 rounded-3 fs-6">Delete</a> 
+</div>
+<hr>
+{% endfor %}
+</div>
+{% endblock %}

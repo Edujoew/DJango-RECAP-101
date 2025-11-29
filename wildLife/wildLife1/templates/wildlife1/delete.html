@@ -1,0 +1,20 @@
+{% extends 'main.html'%} {% block content %}
+
+<div class="container">
+  <h1>
+    ARE YOU SURE YOU WANT TO DELETE
+    <span class="text-danger">"{{animals.name}}"</span>?
+  </h1>
+  <hr />
+  <form action="" method="POST">
+    {% csrf_token %}
+    <a
+      href="{% url 'readAnimals' %}"
+      class="text-decoration-none text-success mx-2"
+      >GO BACK?</a
+    >
+    <input type="submit" value="DELETE" />
+  </form>
+</div>
+{% endblock %}
+WELCOME TO OUR WILDLIFE PAGE!
