@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+<h1 class="display-5">  WELCOME TO OUR WILDLIFE PAGE!</h1>
+<hr>
+
+{% for animals  in animalss  %}
+
+<h1>{{animals.name}}</h1>
+<img src="{{animals.picture}}" alt="{{animals.name}}" width="300">
+<div> {{animals.description}}</div>
+<p> Habitat: {{animals.reserve}}  Population: {{animals.number}}</p>
+
+
+{% endfor %}
+</div>
+{% endblock %}
